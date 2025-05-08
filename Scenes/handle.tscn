@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bac6cpsyln4dl"]
+
+[ext_resource type="Texture2D" uid="uid://cg75kvm2u24wn" path="res://Assets/slot-machine3.png" id="1_6f6fo"]
+[ext_resource type="Texture2D" uid="uid://qem6cdbkpicg" path="res://Assets/slot-machine2.png" id="2_cqw22"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2hlsf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6f6fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cqw22")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="handle" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(408, 339)
+sprite_frames = SubResource("SpriteFrames_2hlsf")
+frame = 1
+frame_progress = 1.0

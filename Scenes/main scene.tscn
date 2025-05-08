@@ -1,3 +1,70 @@
-[gd_scene format=3 uid="uid://ii8fvglttib7"]
+[gd_scene load_steps=5 format=3 uid="uid://ii8fvglttib7"]
+
+[ext_resource type="Script" uid="uid://p6exxyj2rk71" path="res://Scripts/main.gd" id="1_ox3x0"]
+[ext_resource type="PackedScene" uid="uid://bac6cpsyln4dl" path="res://Scenes/handle.tscn" id="3_kgj8u"]
+[ext_resource type="Texture2D" uid="uid://b2b5fh4pjiapf" path="res://Assets/slot-machine1.png" id="4_5oqxy"]
+[ext_resource type="PackedScene" uid="uid://byvmqq1prje7d" path="res://Scenes/slotkeys.tscn" id="4_oxl4w"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ox3x0")
+
+[node name="Slot-machine1" type="Sprite2D" parent="."]
+position = Vector2(275, 316)
+texture = ExtResource("4_5oqxy")
+
+[node name="WagerScore" type="Label" parent="."]
+offset_left = 574.0
+offset_top = 79.0
+offset_right = 685.0
+offset_bottom = 119.0
+theme_override_font_sizes/font_size = 29
+text = "Wager: 0"
+
+[node name="HelpScore" type="Label" parent="."]
+offset_left = 652.0
+offset_top = 258.0
+offset_right = 956.0
+offset_bottom = 384.0
+theme_override_font_sizes/font_size = 29
+text = "Press A to wage less
+Press D to wage more
+Press Space to bet"
+
+[node name="MoniScore" type="Label" parent="."]
+offset_left = 571.0
+offset_top = 25.0
+offset_right = 682.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 29
+text = "Money: "
+
+[node name="handle" parent="." instance=ExtResource("3_kgj8u")]
+position = Vector2(-134, -10)
+
+[node name="Warning" type="Label" parent="."]
+offset_left = 587.0
+offset_top = 146.0
+offset_right = 669.0
+offset_bottom = 188.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+
+[node name="keys" type="Node2D" parent="."]
+
+[node name="slotitem1" parent="keys" instance=ExtResource("4_oxl4w")]
+position = Vector2(151, 359)
+
+[node name="slotitem2" parent="keys" instance=ExtResource("4_oxl4w")]
+position = Vector2(279, 359)
+frame = 1
+
+[node name="slotitem3" parent="keys" instance=ExtResource("4_oxl4w")]
+position = Vector2(410, 359)
+frame = 2
+
+[node name="Winlose" type="Label" parent="."]
+offset_left = 582.0
+offset_top = 140.0
+offset_right = 679.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 29

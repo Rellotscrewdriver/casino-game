@@ -13,11 +13,16 @@ config_version=5
 config/name="casino"
 run/main_scene="uid://ii8fvglttib7"
 config/features=PackedStringArray("4.4", "Mobile")
-boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/bg_color=Color(0, 0, 0, 0)
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/aspect="keep_width"
+window/handheld/orientation=1
 
 [input]
 
