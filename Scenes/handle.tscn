@@ -23,4 +23,3 @@ animations = [{
 position = Vector2(408, 339)
 sprite_frames = SubResource("SpriteFrames_2hlsf")
 frame = 1
-frame_progress = 1.0

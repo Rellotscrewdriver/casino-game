@@ -19,30 +19,36 @@ func _process(delta) -> void:
 
 func _input(event: InputEvent):
 	if event.is_action_pressed("left"):
-		if wagerScore > 0: 
-			wagerScore -= 500
-			wager.text = "Wager: " + str(wagerScore)
-		else:
-			wagerScore = 0
-			wager.text = "Wager: " + str(wagerScore)
+		wager_less()
 	elif event.is_action_pressed("right"):
-		if wagerScore >= randMoney:
-			wager.text = "Wager: " + str(randMoney)
-		else:
-			wagerScore += 500
-			wager.text = "Wager: " + str(wagerScore)
+		wager_more()
+	#this condition makes sure that you don't start with 0 or less than 500 wager to bet
 	elif event.is_action_pressed("bet") and (randMoney > 0 or randMoney > 500) and wagerScore >= 500:
 		AnimHandle.play("default")
 		minus_money()
 		start_spinning()
 		cal_winloss()
 
+func wager_more():
+	if wagerScore >= randMoney:
+		wager.text = "Wager: " + str(randMoney)
+	else:
+		wagerScore += 500
+		wager.text = "Wager: " + str(wagerScore)
+
+func wager_less():
+	if wagerScore > 0: 
+		wagerScore -= 500
+		wager.text = "Wager: " + str(wagerScore)
+	else:
+		wagerScore = 0
+		wager.text = "Wager: " + str(wagerScore)
+
 func cal_winloss():
 	print(AnimKey1.frame, " : ", AnimKey2.frame, " : ", AnimKey3.frame)
 	if AnimKey1.frame == AnimKey2.frame and AnimKey1.frame == AnimKey3.frame:
 		winloss.text = "You Won! Hooray"
 		randMoney += wagerScore * 2
-		money.text = "Money: " + str(randMoney)
 	else:
 		winloss.text = "You Lose!"
 
@@ -50,7 +56,6 @@ func start_spinning():
 	AnimKey1.frame = randi_range(0, 2)
 	AnimKey2.frame = randi_range(0, 2)
 	AnimKey3.frame = randi_range(0, 2)
-
 
 func minus_money():
 	randMoney -= wagerScore

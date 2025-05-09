@@ -9,62 +9,56 @@
 script = ExtResource("1_ox3x0")
 
 [node name="Slot-machine1" type="Sprite2D" parent="."]
-position = Vector2(275, 316)
+position = Vector2(592, 322)
+scale = Vector2(1, 1.04167)
 texture = ExtResource("4_5oqxy")
 
 [node name="WagerScore" type="Label" parent="."]
-offset_left = 574.0
-offset_top = 79.0
-offset_right = 685.0
-offset_bottom = 119.0
+offset_left = 887.0
+offset_top = 104.0
+offset_right = 1009.0
+offset_bottom = 144.0
 theme_override_font_sizes/font_size = 29
 text = "Wager: 0"
 
 [node name="HelpScore" type="Label" parent="."]
-offset_left = 652.0
-offset_top = 258.0
-offset_right = 956.0
-offset_bottom = 384.0
+offset_left = 9.0
+offset_top = 97.0
+offset_right = 313.0
+offset_bottom = 223.0
 theme_override_font_sizes/font_size = 29
 text = "Press A to wage less
 Press D to wage more
 Press Space to bet"
 
 [node name="MoniScore" type="Label" parent="."]
-offset_left = 571.0
-offset_top = 25.0
-offset_right = 682.0
-offset_bottom = 65.0
+offset_left = 887.0
+offset_top = 43.0
+offset_right = 998.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 29
 text = "Money: "
 
 [node name="handle" parent="." instance=ExtResource("3_kgj8u")]
-position = Vector2(-134, -10)
-
-[node name="Warning" type="Label" parent="."]
-offset_left = 587.0
-offset_top = 146.0
-offset_right = 669.0
-offset_bottom = 188.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+position = Vector2(183, -4)
 
 [node name="keys" type="Node2D" parent="."]
 
 [node name="slotitem1" parent="keys" instance=ExtResource("4_oxl4w")]
-position = Vector2(151, 359)
+position = Vector2(465, 366)
 
 [node name="slotitem2" parent="keys" instance=ExtResource("4_oxl4w")]
-position = Vector2(279, 359)
+position = Vector2(598, 364)
 frame = 1
 
 [node name="slotitem3" parent="keys" instance=ExtResource("4_oxl4w")]
-position = Vector2(410, 359)
+position = Vector2(727, 363)
 frame = 2
 
 [node name="Winlose" type="Label" parent="."]
-offset_left = 582.0
-offset_top = 140.0
-offset_right = 679.0
-offset_bottom = 180.0
+offset_left = 890.0
+offset_top = 156.0
+offset_right = 987.0
+offset_bottom = 196.0
 theme_override_font_sizes/font_size = 29
