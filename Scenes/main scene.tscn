@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://ii8fvglttib7"]
+[gd_scene load_steps=8 format=3 uid="uid://ii8fvglttib7"]
 
 [ext_resource type="Script" uid="uid://p6exxyj2rk71" path="res://Scripts/main.gd" id="1_ox3x0"]
 [ext_resource type="PackedScene" uid="uid://bac6cpsyln4dl" path="res://Scenes/handle.tscn" id="3_kgj8u"]
 [ext_resource type="Texture2D" uid="uid://b2b5fh4pjiapf" path="res://Assets/slot-machine1.png" id="4_5oqxy"]
 [ext_resource type="PackedScene" uid="uid://byvmqq1prje7d" path="res://Scenes/slotkeys.tscn" id="4_oxl4w"]
+[ext_resource type="AudioStream" uid="uid://cs8t1ktbxcu42" path="res://Assets/Lever-pull-sound-effect.mp3" id="5_oxl4w"]
+[ext_resource type="AudioStream" uid="uid://bgf35db0cgemt" path="res://Assets/cash-register.mp3" id="5_x2jng"]
+[ext_resource type="AudioStream" uid="uid://d2ojoigbv64ty" path="res://Assets/retro-arcade-casino.wav" id="7_c8jgc"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ox3x0")
@@ -27,7 +30,8 @@ offset_top = 97.0
 offset_right = 313.0
 offset_bottom = 223.0
 theme_override_font_sizes/font_size = 29
-text = "Press A to wage less
+text = "Controls:
+Press A to wage less
 Press D to wage more
 Press Space to bet"
 
@@ -62,3 +66,22 @@ offset_top = 156.0
 offset_right = 987.0
 offset_bottom = 196.0
 theme_override_font_sizes/font_size = 29
+
+[node name="Label" type="Label" parent="."]
+offset_left = 19.0
+offset_top = 508.0
+offset_right = 284.0
+offset_bottom = 634.0
+theme_override_font_sizes/font_size = 29
+text = "Credits to: cazwolf 
+for the assets used
+in this game"
+
+[node name="winner" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_x2jng")
+
+[node name="lever" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_oxl4w")
+
+[node name="wager" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_c8jgc")
